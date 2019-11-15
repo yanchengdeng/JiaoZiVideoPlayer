@@ -540,9 +540,11 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
         state = STATE_PREPARING_CHANGING_URL;
         this.seekToInAdvance = seekToInAdvance;
         jzDataSource.currentUrlIndex = urlMapIndex;
-        mediaInterface.setSurface(null);
-        mediaInterface.release();
-        mediaInterface.prepare();
+//        mediaInterface.setSurface(null);
+//        mediaInterface.release();
+//        mediaInterface.prepare();
+        //TODO 简单粗暴解决视频切换问题  卡顿
+        startVideo();
     }
 
     public void changeUrl(JZDataSource jzDataSource, long seekToInAdvance) {
